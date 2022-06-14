@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from "./components/Form";
+import Characters from "./components/Characters";
+import { useState } from "react";
 
 function App() {
+  const [characterName, setCharacterName] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto p-14">
+      <h1 className="font-bold text-3xl  text-center drop-shadow-2xl">
+        Rick & Morty Characters
+      </h1>
+
+
+      <Form setCharacterName={setCharacterName} />
+      <Characters characterName={characterName} />
     </div>
   );
 }
